@@ -654,6 +654,19 @@ function CommitmentGate({ role, goal, commitCount, support, aimProperties, onAim
   const playbook = CARE_PLAYBOOKS[role];
   const active = playbook.stages.find((item) => item.goal === goal) ?? playbook.stages[0];
   return (
+    <>
+    <div className="mb-4 rounded-lg bg-emerald-500/10 p-3 text-emerald-400 border border-emerald-500/20 flex items-center justify-between">
+  <div>
+    <span className="font-semibold text-sm">Target Outcome:</span>
+    <span className="ml-2 text-xs">Daily draft + result promised for 30 leads</span>
+  </div>
+  <div className="flex items-center gap-2 text-xs">
+    <span className="text-muted-foreground">Owner: Lead Desk</span>
+    <span className="bg-red-500/20 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-mono">
+      Deadline: Today 6:00 PM (LATE)
+    </span>
+  </div>
+</div>
     <div className="min-h-0 flex-1 overflow-y-auto p-3">
       <div className="mx-auto max-w-5xl border bg-card">
         <div className="border-b px-4 py-3">
@@ -729,8 +742,9 @@ function CommitmentGate({ role, goal, commitCount, support, aimProperties, onAim
         </div>
       </div>
     </div>
+    </>
   );
-}
+};
 
 function ProgressReporter({ round, onRound, actual, committed, moved, stuck, need, onMoved, onStuck, onNeed, onSave }: {
   round: CareRound; onRound: (round: CareRound) => void; actual: number; committed: number;
