@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GraduationCap, Zap } from "lucide-react";
+import { GraduationCap, Zap, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Capture } from "./Capture";
@@ -29,6 +29,18 @@ export function BookingFlow() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-4 p-4">
+      <div className="mb-4 rounded-lg bg-emerald-500/10 p-3 text-emerald-400 border border-emerald-500/20 flex items-center justify-between">
+  <div>
+    <span className="font-semibold text-sm">Target Outcome:</span>
+    <span className="ml-2 text-xs">Booking Split & Flow Execution</span>
+  </div>
+  <div className="flex items-center gap-2 text-xs">
+    <span className="text-muted-foreground">Owner: Booking Ops</span>
+    <span className="bg-red-500/20 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-mono">
+      Deadline: Approval Pending (LATE)
+    </span>
+  </div>
+</div>
       <div className="flex flex-wrap items-center gap-2">
         <div className="mr-auto">
           <h1 className="text-xl font-semibold">Gharpayy Booking Flow</h1>
