@@ -65,6 +65,27 @@ export function BookingFlow() {
       </div>
 
       {screen === "CAPTURE" && <Capture onDone={() => setScreen("BATCH")} />}
+        {screen === "LEAD" && (
+  <div className="mb-3 rounded-lg bg-emerald-500/10 p-3 text-emerald-400 border border-emerald-500/20 flex items-center justify-between">
+    <div>
+      <span className="font-semibold text-sm">Target Outcome:</span>
+      <span className="ml-2 text-xs">CRM Lead Conversion & Quick Action</span>
+    </div>
+    <div className="flex items-center gap-2 text-xs">
+      <span className="bg-red-500/20 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-mono">
+        Overdue Lead Alert (LATE)
+      </span>
+      <a
+        href="https://wa.me/?text=Hello%20from%20Gharpayy"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-green-600 hover:bg-green-700 text-white px-2.5 py-1 rounded text-xs flex items-center gap-1 font-medium transition-colors"
+      >
+        WhatsApp Lead
+      </a>
+    </div>
+  </div>
+)}
       {screen === "BATCH" && <BatchBoard onOpenLead={(id) => { setLeadId(id); setScreen("LEAD"); }} />}
       {screen === "BOARD" && <Board onOpenLead={(id) => { setLeadId(id); setScreen("LEAD"); }} />}
       {screen === "LEAD" && (lead
